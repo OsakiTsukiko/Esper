@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 
-const SPEED: float = 2000.0
+const SPEED: float = 2500.0
 
-func _process(delta):
+func _physics_process(delta):
 	var input_vector := Vector2(
 		Input.get_action_strength("esper_right") - Input.get_action_strength("esper_left"),
 		Input.get_action_strength("esper_down") - Input.get_action_strength("esper_up")
