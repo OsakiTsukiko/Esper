@@ -28,7 +28,6 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "IDLE"
-frame = 1
 speed_scale = 0.5
 playing = true
 

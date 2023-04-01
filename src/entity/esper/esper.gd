@@ -14,6 +14,8 @@ func _physics_process(delta):
 	
 	move_and_slide(input_vector * delta * SPEED)
 	
+	Shortlivedconfig.global_player_coords = global_position
+	
 	if (input_vector != Vector2.ZERO):
 		if (input_vector.y < 0):
 			sprite.animation = "RUN_UP"
