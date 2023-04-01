@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/ornate-theme-release.tres" type="Theme" id=2]
 [ext_resource path="res://assets/main_illustration/esper_illustration2.png" type="Texture" id=3]
 [ext_resource path="res://assets/btn_group/new_buttongroup.tres" type="ButtonGroup" id=4]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/pixelplay.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/sfx/menu_click.wav" type="AudioStream" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -247,6 +248,11 @@ size_flags_vertical = 3
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
+
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -9.896
+bus = "SFX"
 
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer/BeginBTN" to="." method="_on_BeginBTN_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer3/OptionsBTN" to="." method="_on_OptionsBTN_pressed"]
