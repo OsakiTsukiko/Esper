@@ -37,6 +37,7 @@ config/icon="res://icon.png"
 
 Gamestate="*res://src/utils/gamestate.tscn"
 Shortlivedconfig="*res://src/utils/shortlived_config.gd"
+SoundManager="*res://src/utils/soundmanager.tscn"
 
 [display]
 

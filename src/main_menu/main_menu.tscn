@@ -207,17 +207,21 @@ fit_content_height = true
 margin_top = 19.0
 margin_right = 96.0
 margin_bottom = 48.0
+focus_mode = 0
 custom_fonts/font = SubResource( 5 )
 pressed = true
+enabled_focus_mode = 0
 text = "Sound Effects"
 
 [node name="SfxCHBTN" type="CheckButton" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
 margin_top = 45.0
 margin_right = 96.0
 margin_bottom = 74.0
+focus_mode = 0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 5 )
 pressed = true
+enabled_focus_mode = 0
 text = "Music"
 
 [node name="CenterContainer4" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]

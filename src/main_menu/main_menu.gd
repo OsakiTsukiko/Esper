@@ -4,8 +4,6 @@ extends Control
 onready var main_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer
 onready var size_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2
 onready var options_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3
-func _ready():
-	pass
 
 
 func _on_BeginBTN_pressed():
@@ -36,7 +34,7 @@ func _on_SizeLargeBTN_pressed():
 
 
 func _on_MusicCHBTN_toggled(button_pressed):
-	pass # Replace with function body.
+	SoundManager.toggle_music($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/MusicCHBTN.pressed)
 
 func _on_SfxCHBTN_toggled(button_pressed):
-	pass # Replace with function body.
+	SoundManager.toggle_sfx($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/SfxCHBTN.pressed)

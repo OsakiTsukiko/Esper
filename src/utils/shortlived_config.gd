@@ -16,9 +16,6 @@ var map_matrix: Array
 var map_length_matrix: Array
 
 
-# 8 4
-# 13 6
-# 20 10	
 func create_map(room_number, distance):
 	map_room_number = room_number
 	map_SB_distance = distance
