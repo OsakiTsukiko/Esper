@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/ornate-theme-release.tres" type="Theme" id=2]
-[ext_resource path="res://assets/main_illustration/esper_illustration.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/main_illustration/esper_illustration2.png" type="Texture" id=3]
 [ext_resource path="res://assets/btn_group/new_buttongroup.tres" type="ButtonGroup" id=4]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/pixelplay.ttf" type="DynamicFontData" id=5]
 
@@ -211,7 +211,7 @@ focus_mode = 0
 custom_fonts/font = SubResource( 5 )
 pressed = true
 enabled_focus_mode = 0
-text = "Sound Effects"
+text = "Music"
 
 [node name="SfxCHBTN" type="CheckButton" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
 margin_top = 45.0
@@ -222,7 +222,7 @@ size_flags_horizontal = 3
 custom_fonts/font = SubResource( 5 )
 pressed = true
 enabled_focus_mode = 0
-text = "Music"
+text = "Sound Effects"
 
 [node name="CenterContainer4" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
 margin_top = 71.0

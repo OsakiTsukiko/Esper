@@ -5,6 +5,8 @@ onready var main_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer
 onready var size_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2
 onready var options_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3
 
+func _ready():
+	Soundmanager.menu_music.play()
 
 func _on_BeginBTN_pressed():
 	main_menu.hide()
@@ -34,7 +36,7 @@ func _on_SizeLargeBTN_pressed():
 
 
 func _on_MusicCHBTN_toggled(button_pressed):
-	SoundManager.toggle_music($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/MusicCHBTN.pressed)
+	Soundmanager.toggle_music($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/MusicCHBTN.pressed)
 
 func _on_SfxCHBTN_toggled(button_pressed):
-	SoundManager.toggle_sfx($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/SfxCHBTN.pressed)
+	Soundmanager.toggle_sfx($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/SfxCHBTN.pressed)
