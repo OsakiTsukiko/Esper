@@ -25,6 +25,13 @@ config/description="CO-OP 2D roguelike dungeon crawler themed around a 6th sense
 config/use_custom_user_dir=true
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=256
+window/size/height=150
+window/size/test_width=1024
+window/size/test_height=600
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
