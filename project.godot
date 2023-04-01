@@ -22,9 +22,13 @@ _global_script_class_icons={
 
 config/name="Esper"
 config/description="CO-OP 2D roguelike dungeon crawler themed around a 6th sense!"
-run/main_scene="res://src/main_menu/main_menu.tscn"
+run/main_scene="res://src/main_menu.tscn"
 config/use_custom_user_dir=true
 config/icon="res://icon.png"
+
+[autoload]
+
+Shortlivedconfig="*res://src/utils/shortlivedconfig.gd"
 
 [display]
 
@@ -32,6 +36,8 @@ window/size/width=256
 window/size/height=150
 window/size/test_width=1024
 window/size/test_height=600
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [gui]
 
