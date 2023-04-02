@@ -5,7 +5,7 @@
 [ext_resource path="res://src/levels/spawn/SpawnLevelIDKI.tres" type="TileSet" id=3]
 [ext_resource path="res://assets/effects/beam.png" type="Texture" id=4]
 
-[sub_resource type="ViewportTexture" id=24]
+[sub_resource type="ViewportTexture" id=26]
 viewport_path = NodePath("Viewport")
 
 [sub_resource type="ViewportTexture" id=25]
@@ -27,16 +27,16 @@ extents = Vector2( 6, 17 )
 script = ExtResource( 2 )
 
 [node name="MaskTextureHolder" type="Sprite" parent="."]
-texture = SubResource( 24 )
+position = Vector2( -128, -75 )
+texture = SubResource( 26 )
 centered = false
 
 [node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 256, 150 )
+size = Vector2( 512, 300 )
 transparent_bg = true
 render_target_v_flip = true
 
 [node name="Mask" type="Sprite" parent="Viewport"]
-position = Vector2( -5, 15 )
 texture = ExtResource( 4 )
 centered = false
 offset = Vector2( 5, -15 )
