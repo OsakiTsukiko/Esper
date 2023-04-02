@@ -225,10 +225,20 @@ pressed = true
 enabled_focus_mode = 0
 text = "Sound Effects"
 
-[node name="CenterContainer4" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
+[node name="ControllerCHBTN" type="CheckButton" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
 margin_top = 71.0
 margin_right = 96.0
-margin_bottom = 101.0
+margin_bottom = 100.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
+text = "Controller"
+
+[node name="CenterContainer4" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
+margin_top = 97.0
+margin_right = 96.0
+margin_bottom = 127.0
 
 [node name="BackBTN" type="Button" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/CenterContainer4"]
 margin_left = 31.0
@@ -263,4 +273,5 @@ bus = "SFX"
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2/CenterContainer4/BackBTN" to="." method="_on_BackBTN_pressed"]
 [connection signal="toggled" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/MusicCHBTN" to="." method="_on_MusicCHBTN_toggled"]
 [connection signal="toggled" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/SfxCHBTN" to="." method="_on_SfxCHBTN_toggled"]
+[connection signal="toggled" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/ControllerCHBTN" to="." method="_on_ControllerCHBTN_toggled"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/CenterContainer4/BackBTN" to="." method="_on_BackBTN_pressed"]

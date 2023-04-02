@@ -161,11 +161,9 @@ position = Vector2( 128, 79 )
 
 [node name="GhostSpawner2" parent="." instance=ExtResource( 5 )]
 position = Vector2( -120, 270 )
-timer_time = 20
 
 [node name="GhostSpawner3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 319, -113 )
-timer_time = 20
 
 [connection signal="body_entered" from="DOORS/UP/Area2D" to="." method="_on_UP_body_entered"]
 [connection signal="body_entered" from="DOORS/DOWN/Area2D" to="." method="_on_DOWN_body_entered"]
