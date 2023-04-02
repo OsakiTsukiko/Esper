@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/ornate-theme-release.tres" type="Theme" id=2]
-[ext_resource path="res://assets/main_illustration/esper_illustration.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/main_illustration/esper_illustration2.png" type="Texture" id=3]
 [ext_resource path="res://assets/btn_group/new_buttongroup.tres" type="ButtonGroup" id=4]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/pixelplay.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/sfx/menu_click.wav" type="AudioStream" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -19,6 +20,10 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 12
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
 font_data = ExtResource( 5 )
 
 [node name="MainMenu" type="Control"]
@@ -83,10 +88,25 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
 text = "Begin"
 
-[node name="CenterContainer2" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+[node name="CenterContainer3" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
 margin_top = 59.0
 margin_right = 111.0
 margin_bottom = 88.0
+
+[node name="OptionsBTN" type="Button" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer3"]
+margin_left = 33.0
+margin_right = 77.0
+margin_bottom = 29.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Options"
+
+[node name="CenterContainer2" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+margin_top = 92.0
+margin_right = 111.0
+margin_bottom = 121.0
 
 [node name="QuitBTN" type="Button" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer2"]
 margin_left = 41.0
@@ -104,7 +124,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = -3
 
-[node name="Title" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2"]
+[node name="MapSizeTitle" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2"]
 margin_right = 111.0
 margin_bottom = 22.0
 bbcode_enabled = true
@@ -168,6 +188,57 @@ custom_fonts/font = SubResource( 4 )
 group = ExtResource( 4 )
 text = "Back"
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Panel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -7.0
+custom_constants/separation = -3
+
+[node name="OptionsTitle" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
+margin_right = 96.0
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "[center]Options[/center]"
+text = "Options"
+fit_content_height = true
+
+[node name="MusicCHBTN" type="CheckButton" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
+margin_top = 19.0
+margin_right = 96.0
+margin_bottom = 48.0
+focus_mode = 0
+custom_fonts/font = SubResource( 5 )
+pressed = true
+enabled_focus_mode = 0
+text = "Music"
+
+[node name="SfxCHBTN" type="CheckButton" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
+margin_top = 45.0
+margin_right = 96.0
+margin_bottom = 74.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+pressed = true
+enabled_focus_mode = 0
+text = "Sound Effects"
+
+[node name="CenterContainer4" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3"]
+margin_top = 71.0
+margin_right = 96.0
+margin_bottom = 101.0
+
+[node name="BackBTN" type="Button" parent="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/CenterContainer4"]
+margin_left = 31.0
+margin_right = 64.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 4 )
+group = ExtResource( 4 )
+text = "Back"
+
 [node name="Illustration" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer"]
 margin_left = 115.0
 margin_right = 226.0
@@ -178,9 +249,18 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -9.896
+bus = "SFX"
+
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer/BeginBTN" to="." method="_on_BeginBTN_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer3/OptionsBTN" to="." method="_on_OptionsBTN_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/CenterContainer2/QuitBTN" to="." method="_on_QuitBTN_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2/CenterContainer/SizeSmallBTN" to="." method="_on_SizeSmallBTN_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2/CenterContainer2/SizeMedBTN" to="." method="_on_SizeMedBTN_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2/CenterContainer3/SizeLargeBTN" to="." method="_on_SizeLargeBTN_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer2/CenterContainer4/BackBTN" to="." method="_on_BackBTN_pressed"]
+[connection signal="toggled" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/MusicCHBTN" to="." method="_on_MusicCHBTN_toggled"]
+[connection signal="toggled" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/SfxCHBTN" to="." method="_on_SfxCHBTN_toggled"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/CenterContainer4/BackBTN" to="." method="_on_BackBTN_pressed"]
