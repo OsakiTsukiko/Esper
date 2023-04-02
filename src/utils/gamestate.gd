@@ -5,6 +5,8 @@ onready var h_1 = $CanvasLayer/hearts/heart_01
 onready var h_2 = $CanvasLayer/hearts/heart_02
 onready var h_3 = $CanvasLayer/hearts/heart_03
 
+var controller_usage: bool = false
+
 var game_over_screen: Resource = load("res://src/gameover_screen/GameOverScreen.tscn")
 
 var levels = [
@@ -33,7 +35,7 @@ func begin():
 			Shortlivedconfig.map_matrix[10][10].r % levels[0].size()
 		]
 	)
-	
+	InputMap
 	Soundmanager.stop_all_music()
 	Soundmanager.main_music.play()
 	
@@ -97,3 +99,11 @@ func _process(delta):
 func get_hit():
 	hearts -= 1
 	emit_signal("get_hit")
+
+func toggle_controller_usage(toggle: bool):
+	controller_usage = toggle
+#	if (controller_usage == true):
+#		# esper - only controller
+#		# luffy - take esper controls
+#		InputMap.action_erase_events("esper_up")
+#		InputMap.action_add_event("esper_up", InputEvent)

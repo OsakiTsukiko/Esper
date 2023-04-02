@@ -14,10 +14,17 @@ func _ready():
 	Gamestate.connect("get_hit", self, "_get_hit")
 
 func _physics_process(delta):
-	var input_vector := Vector2(
+	var input_vector: Vector2
+	if (Gamestate.controller_usage == false):
+		input_vector = Vector2(
 		Input.get_action_strength("esper_right") - Input.get_action_strength("esper_left"),
 		Input.get_action_strength("esper_down") - Input.get_action_strength("esper_up")
-	)
+		)
+	else:
+		input_vector = Vector2(
+		Input.get_action_strength("controller_right") - Input.get_action_strength("controller_left"),
+		Input.get_action_strength("controller_down") - Input.get_action_strength("controller_up")
+		)
 	
 	input_vector = input_vector.normalized()
 	

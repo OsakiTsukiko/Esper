@@ -57,3 +57,8 @@ func _on_MusicCHBTN_toggled(button_pressed):
 func _on_SfxCHBTN_toggled(button_pressed):
 	Soundmanager.toggle_sfx($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/SfxCHBTN.pressed)
 	menu_click_sound.play()
+
+
+func _on_ControllerCHBTN_toggled(button_pressed):
+	Gamestate.toggle_controller_usage($Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3/ControllerCHBTN.pressed)
+	menu_click_sound.play()
