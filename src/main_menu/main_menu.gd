@@ -6,10 +6,11 @@ onready var size_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer
 onready var options_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer3
 
 onready var menu_click_sound = $MenuClick
+var intro_screen = load("res://src/intro_screen/IntroScreen.tscn")
 
 func _ready():
-	Soundmanager.stop_all_music()
-	Soundmanager.menu_music.play()
+	if (!Soundmanager.menu_music.is_playing()):
+		Soundmanager.menu_music.play()
 
 func _on_BeginBTN_pressed():
 	main_menu.hide()
@@ -36,14 +37,17 @@ func _on_BackBTN_pressed():
 func _on_SizeSmallBTN_pressed():
 	menu_click_sound.play()
 	Shortlivedconfig.create_map(8, 4)
+	get_tree().change_scene_to(intro_screen)
 
 func _on_SizeMedBTN_pressed():
 	menu_click_sound.play()
 	Shortlivedconfig.create_map(13, 6)
+	get_tree().change_scene_to(intro_screen)
 
 func _on_SizeLargeBTN_pressed():
 	menu_click_sound.play()
 	Shortlivedconfig.create_map(20, 10)
+	get_tree().change_scene_to(intro_screen)
 
 
 func _on_MusicCHBTN_toggled(button_pressed):

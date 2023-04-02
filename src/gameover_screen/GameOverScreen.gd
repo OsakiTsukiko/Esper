@@ -4,7 +4,8 @@ var main_menu_scene: Resource = load("res://src/main_menu/main_menu.tscn")
 onready var menu_click_sound = $MenuClick
 
 func _ready():
-	pass
+	Soundmanager.stop_all_music()
+	Soundmanager.menu_music.play()
 
 
 func _on_Button_pressed():

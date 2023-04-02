@@ -24,6 +24,6 @@ func create_map(room_number, distance):
 		for j in range(map_matrix[i].size()):
 			sol_array.append(map_matrix[i][j].id)
 #		print(sol_array)
-	Gamestate.begin()
+#	Gamestate.begin()
 
 onready var global_player_coords: Vector2

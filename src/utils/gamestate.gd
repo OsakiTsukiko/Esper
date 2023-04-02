@@ -5,6 +5,8 @@ onready var h_1 = $CanvasLayer/hearts/heart_01
 onready var h_2 = $CanvasLayer/hearts/heart_02
 onready var h_3 = $CanvasLayer/hearts/heart_03
 
+var game_over_screen: Resource = load("res://src/gameover_screen/GameOverScreen.tscn")
+
 var levels = [
 	[load("res://src/levels/spawn/SpawnLevel.tscn")], # 0
 	[load("res://src/levels/type_01/01/01.tscn")], # 1
@@ -25,6 +27,7 @@ func _ready():
 
 func begin():
 	is_in_game = true
+	hearts = 3
 	get_tree().change_scene_to(
 		levels[0][
 			Shortlivedconfig.map_matrix[10][10].r % levels[0].size()
@@ -85,7 +88,9 @@ func _process(delta):
 	else:
 		h_1.visible = false
 	
-	if (hearts == 0):
+	if (hearts == 0 && is_in_game):
+		is_in_game = false
+		get_tree().change_scene_to(game_over_screen)
 		pass
 		# GAME OVER
 

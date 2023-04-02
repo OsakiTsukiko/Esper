@@ -35,9 +35,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Gamestate="*res://src/utils/gamestate.tscn"
-Shortlivedconfig="*res://src/utils/shortlived_config.gd"
 Soundmanager="*res://src/utils/soundmanager.tscn"
+Shortlivedconfig="*res://src/utils/shortlived_config.gd"
+Gamestate="*res://src/utils/gamestate.tscn"
 
 [display]
 
@@ -78,6 +78,10 @@ texture={
 
 [input]
 
+ui_select={
+"deadzone": 0.5,
+"events": [  ]
+}
 esper_up={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
@@ -126,6 +130,11 @@ esper_attack={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+intro_screen_accept={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
 
