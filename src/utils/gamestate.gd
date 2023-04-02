@@ -8,6 +8,7 @@ onready var h_3 = $CanvasLayer/hearts/heart_03
 var controller_usage: bool = false
 
 var game_over_screen: Resource = load("res://src/gameover_screen/GameOverScreen.tscn")
+var victory_screen: Resource = load("res://src/victory_screen/VictoryScreen.tscn")
 
 var levels = [
 	[load("res://src/levels/spawn/SpawnLevel.tscn")], # 0
@@ -93,8 +94,10 @@ func _process(delta):
 	if (hearts == 0 && is_in_game):
 		is_in_game = false
 		get_tree().change_scene_to(game_over_screen)
-		pass
-		# GAME OVER
+
+func won_screen():
+	is_in_game = false
+	get_tree().change_scene_to(victory_screen)
 
 func get_hit():
 	hearts -= 1

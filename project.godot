@@ -30,14 +30,15 @@ config/name="Esper"
 config/description="CO-OP 2D roguelike dungeon crawler themed around a 6th sense!"
 run/main_scene="res://src/main_menu/main_menu.tscn"
 config/use_custom_user_dir=true
+boot_splash/show_image=false
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
-Soundmanager="*res://src/utils/soundmanager.tscn"
-Shortlivedconfig="*res://src/utils/shortlived_config.gd"
 Gamestate="*res://src/utils/gamestate.tscn"
+Shortlivedconfig="*res://src/utils/shortlived_config.gd"
+Soundmanager="*res://src/utils/soundmanager.tscn"
 
 [display]
 

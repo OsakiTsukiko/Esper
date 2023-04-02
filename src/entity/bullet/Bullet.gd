@@ -16,5 +16,5 @@ func _on_Bullet_body_entered(body):
 		body.health -= 1
 		if (body.health == 0):
 			body.queue_free()
-			# YOU WON!
+			Gamestate.won_screen()
 		queue_free()
