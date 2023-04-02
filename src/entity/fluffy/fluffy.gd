@@ -12,10 +12,11 @@ func _physics_process(delta):
 	
 	input_vector = input_vector.normalized()
 	
-	move_and_slide(input_vector * delta * SPEED)
-	
 	if (input_vector != Vector2.ZERO):
 		if (input_vector.x < 0):
 			sprite.flip_h = true
 		else:
 			sprite.flip_h = false
+	
+	move_and_slide(input_vector * delta * SPEED)
+	

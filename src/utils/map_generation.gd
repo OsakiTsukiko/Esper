@@ -6,10 +6,12 @@ const directional_arr: Array = [Vector2(0, -1), Vector2(1, 0), Vector2(-1,0), Ve
 class DungeonRoom:
 	var id: int = -1
 	var coord: Vector2
+	var r: int
 	
 	func _init(id: int, coords: Vector2):
 		self.id = id
 		self.coord = coords
+		self.r = randi()
 
 static func count_adjacent_rooms(width: int, height: int, matrix: Array, coords: Vector2):
 	var count = 0

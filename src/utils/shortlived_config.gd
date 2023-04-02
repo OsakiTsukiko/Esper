@@ -27,4 +27,5 @@ func create_map(room_number, distance):
 		var sol_array = []
 		for j in range(map_matrix[i].size()):
 			sol_array.append(map_matrix[i][j].id)
-		print(sol_array)
+#		print(sol_array)
+	Gamestate.begin()
