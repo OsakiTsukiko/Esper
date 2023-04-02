@@ -13,8 +13,7 @@ func _physics_process(delta):
 	
 	movement_vec = position.direction_to(Shortlivedconfig.global_player_coords)
 	position += movement_vec * SPEED * delta
-	
-	if (movement_vec != Vector2.ZERO):
+	or2.ZERO):
 		if (movement_vec.x < 0):
 			sprite.flip_h = true
 		else:

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/themes/ornate_pixelart_theme/ornate-theme-release.tres" type="Theme" id=1]
+[ext_resource path="res://assets/sfx/menu_click.wav" type="AudioStream" id=2]
+[ext_resource path="res://src/victory_screen/VictoryScreen.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="VictoryScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -88, -33 )
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 241.0
+margin_bottom = 135.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer"]
+margin_right = 226.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+[center][wave amp=15.0 freq=2.0]~ You Won ~[/wave][/center]
+[center]Congratulations[/center]"
+text = "
+~ You Won ~
+Congratulations"
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 85.0
+margin_right = 226.0
+margin_bottom = 120.0
+theme = ExtResource( 1 )
+text = "Return to Main Menu"
+
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -9.896
+bus = "SFX"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
