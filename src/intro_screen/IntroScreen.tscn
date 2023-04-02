@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/themes/ornate_pixelart_theme/pixelplay.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/themes/ornate_pixelart_theme/ornate-theme-release.tres" type="Theme" id=2]
+[ext_resource path="res://src/intro_screen/IntroScreen.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 1 )
+
+[node name="IntroScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 241.0
+margin_bottom = 135.0
+theme = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[u]Esper[/u] is an adventurous but lost girl that somehow found her way into a [u]dark dungeon[/u]. While wandering the depths of the crypt, she found an old looking watch that gave her the power to see a friendly little [u]ghost[/u].
+
+In exchange for freedom from it's curse by slaying the foul monster within, the ghost offered to reveal the true nature of the dungeon, along with it's dangerous foes. Esper will act as the hands while the ghost will be her eyes."
+text = "Esper is an adventurous but lost girl that somehow found her way into a dark dungeon. While wandering the depths of the crypt, she found an old looking watch that gave her the power to see a friendly little ghost.
+
+In exchange for freedom from it's curse by slaying the foul monster within, the ghost offered to reveal the true nature of the dungeon, along with it's dangerous foes. Esper will act as the hands while the ghost will be her eyes."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = -24.0
+theme = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]Space - Continue         [/right]"
+text = "Space - Continue         "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 13.0
+margin_top = -40.0
+margin_right = 148.0
+theme = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "Controls:
+Esper - WASD & Space / Joystick & X
+Ghost - Arrows & Mouse"
+text = "Controls:
+Esper - WASD & Space / Joystick & X
+Ghost - Arrows & Mouse"

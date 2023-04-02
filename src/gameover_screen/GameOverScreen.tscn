@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/ornate-theme-release.tres" type="Theme" id=1]
 [ext_resource path="res://src/gameover_screen/GameOverScreen.gd" type="Script" id=2]
 [ext_resource path="res://assets/themes/ornate_pixelart_theme/pixelplay.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sfx/menu_click.wav" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -56,6 +57,11 @@ margin_right = 200.0
 margin_bottom = 113.0
 theme = ExtResource( 1 )
 text = "Exit?"
+
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -9.896
+bus = "SFX"
 
 [connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
