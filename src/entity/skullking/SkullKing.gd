@@ -29,3 +29,6 @@ func _physics_process(delta):
 	
 	if (t.distance_to(global_position) <= .5):
 		do_move()
+
+func IS_SKULLKING() -> bool:
+	return true

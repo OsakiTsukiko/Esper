@@ -32,3 +32,6 @@ func _on_Timer_timeout():
 	else:
 		t_is_running = false
 		t.stop()
+
+func IS_ENEMY() -> bool:
+	return true

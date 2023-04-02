@@ -34,6 +34,7 @@ script = ExtResource( 2 )
 light_mask = 32
 frames = SubResource( 3 )
 animation = "IDLE"
+frame = 1
 speed_scale = 0.5
 playing = true
 
