@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Esper_MAIN.mp3-a0bff9b74c35ea9310f3674899a191a0.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Esper_MAIN.mp3"
+dest_files=[ "res://.import/Esper_MAIN.mp3-a0bff9b74c35ea9310f3674899a191a0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
