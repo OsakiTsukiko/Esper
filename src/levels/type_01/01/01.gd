@@ -39,8 +39,8 @@ func _ready():
 	Gamestate.connect("load_room", self, "_load_room")
 
 func _physics_process(delta):
-	mask.global_position = fluffy.global_position + Vector2(256 / 2, 150 / 2)
-	mask.look_at(get_global_mouse_position() + Vector2(256 / 2, 150 / 2))
+	mask.global_position = fluffy.global_position + Vector2(256, 150)
+	mask.look_at(get_global_mouse_position() + Vector2(256, 150))
 
 func _load_room(room_coords: Vector2, from: String):
 	self.room_coords = room_coords
