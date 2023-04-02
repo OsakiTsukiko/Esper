@@ -6,7 +6,7 @@ onready var a: Area2D = $Area2D
 
 var t_is_running: bool = false
 
-const SPEED: float = 5.0
+const SPEED: float = 20.0
 var movement_vec: Vector2
 
 func _physics_process(delta):

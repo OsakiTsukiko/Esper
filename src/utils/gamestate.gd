@@ -7,9 +7,9 @@ onready var h_3 = $CanvasLayer/hearts/heart_03
 
 var levels = [
 	[load("res://src/levels/spawn/SpawnLevel.tscn")], # 0
-	[load("res://src/levels/type_01/01/01.tscn")], # 1
-	[load("res://src/levels/type_01/01/01.tscn")], # 2
-	[load("res://src/levels/type_01/01/01.tscn")], # 3
+	[load("res://src/levels/type_01/01/01.tscn"), load("res://src/levels/type_01/02/02.tscn")], # 1
+	[load("res://src/levels/type_01/01/01.tscn"), load("res://src/levels/type_01/02/02.tscn")], # 2
+	[load("res://src/levels/boss/bossroom.tscn")], # 3
 ]
 
 var is_in_game: bool = false
