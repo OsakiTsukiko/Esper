@@ -8,6 +8,7 @@ onready var options_menu = $Panel/MarginContainer/HBoxContainer/Panel/VBoxContai
 onready var menu_click_sound = $MenuClick
 
 func _ready():
+	Soundmanager.stop_all_music()
 	Soundmanager.menu_music.play()
 
 func _on_BeginBTN_pressed():
