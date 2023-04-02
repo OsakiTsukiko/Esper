@@ -64,6 +64,12 @@ func _load_room(room_coords: Vector2, from: String):
 	var cam := Camera2D.new()
 	esper.add_child(cam)
 	cam.current = true
+	
+	# DEBUG (TP TO KING)
+#	for i in range(20):
+#		for j in range(20):
+#			if (Shortlivedconfig.map_matrix[i][j].id == 3):
+#				Gamestate.goto_room(Vector2(i, j), "LEFT")
 
 func _on_UP_body_entered(body):
 	if (body.name == "Esper"):
