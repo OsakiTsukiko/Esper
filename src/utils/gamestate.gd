@@ -19,6 +19,10 @@ func begin():
 			Shortlivedconfig.map_matrix[10][10].r % levels[0].size()
 		]
 	)
+	
+	Soundmanager.stop_all_music()
+	Soundmanager.main_music.play()
+	
 	call_deferred("emit_signal", "load_room", Vector2(10, 10), "SPAWN")
 
 func goto_room(coords: Vector2, from: String):
@@ -31,4 +35,20 @@ func goto_room(coords: Vector2, from: String):
 			].size()
 		]
 	)
+	if (Shortlivedconfig.map_matrix[coords.x][coords.y].id == 3):
+		Soundmanager.stop_all_music()
+		Soundmanager.boss_music.play()
+	
+	if (Shortlivedconfig.map_matrix[coords.x][coords.y].id == 2 && !Soundmanager.main_music.is_playing()):
+		Soundmanager.stop_all_music()
+		Soundmanager.main_music.play()
+	
+	if (Shortlivedconfig.map_matrix[coords.x][coords.y].id == 1 && !Soundmanager.main_music.is_playing()):
+		Soundmanager.stop_all_music()
+		Soundmanager.main_music.play()
+	
+	if (Shortlivedconfig.map_matrix[coords.x][coords.y].id == 0 && !Soundmanager.main_music.is_playing()):
+		Soundmanager.stop_all_music()
+		Soundmanager.main_music.play()
+	
 	call_deferred("emit_signal", "load_room", coords, from)

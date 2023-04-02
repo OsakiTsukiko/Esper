@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/levels/spawn/SpawnLevelIDK.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/spawn/SpawnLevel.gd" type="Script" id=2]
 [ext_resource path="res://src/levels/spawn/SpawnLevelIDKI.tres" type="TileSet" id=3]
 [ext_resource path="res://assets/effects/beam.png" type="Texture" id=4]
-[ext_resource path="res://src/entity/enemy/enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ViewportTexture" id=24]
 viewport_path = NodePath("Viewport")
@@ -162,4 +161,3 @@ tile_data = PoolIntArray( 65537, 0, 393220, 65550, 0, 458759, 327691, 2, 0, 3932
 [connection signal="body_entered" from="DOORS/DOWN/Area2D" to="." method="_on_DOWN_body_entered"]
 [connection signal="body_entered" from="DOORS/LEFT/Area2D" to="." method="_on_LEFT_body_entered"]
 [connection signal="body_entered" from="DOORS/RIGHT/Area2D" to="." method="_on_RIGHT_body_entered"]
-
