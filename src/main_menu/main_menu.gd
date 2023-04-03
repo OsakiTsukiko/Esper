@@ -10,7 +10,9 @@ var intro_screen = load("res://src/intro_screen/IntroScreen.tscn")
 
 func _ready():
 	if (!Soundmanager.menu_music.is_playing()):
+		Soundmanager.stop_all_music()
 		Soundmanager.menu_music.play()
+		
 
 func _on_BeginBTN_pressed():
 	main_menu.hide()
