@@ -27,7 +27,7 @@ func spawn():
 	enemy.global_position = global_position
 
 func _on_Area2D_area_entered(area):
-	if (area.has_method("IS_BULLET")):
+	if (area.has_method("IS_BULLET") && health > 0):
 		health -= 1
 		area.queue_free()
 	if (health <= 0):
