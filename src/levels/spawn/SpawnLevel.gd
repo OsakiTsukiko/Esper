@@ -57,8 +57,8 @@ func _load_room(room_coords: Vector2, from: String):
 	
 	esper = esper_scene.instance()
 	fluffy = fluffy_scene.instance()
-	esper.position = DOORS[from].pos.position
-	fluffy.position = Utils.rand_vicinity(DOORS[from].pos.position)
+	esper.global_position = DOORS[from].pos.global_position
+	fluffy.global_position = Utils.rand_vicinity(DOORS[from].pos.global_position)
 	self.add_child(esper)
 	self.add_child(fluffy)
 	var cam := Camera2D.new()
