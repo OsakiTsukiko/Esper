@@ -1,4 +1,4 @@
-# Esper ~ [ https://osakitsukiko.github.io/Esper/ ]
+# Esper ~ [ https://osakitsukiko.itch.io/esper ]
 CO-OP 2D roguelike dungeon crawler themed around a 6th sense!<br>
 Game made for itec.ro 2023 game jam in 40h
 
