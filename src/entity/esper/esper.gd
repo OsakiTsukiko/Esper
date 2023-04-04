@@ -3,6 +3,10 @@ extends KinematicBody2D
 var bullet_scene: Resource = load("res://src/entity/bullet/Bullet.tscn")
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
+onready var bs_up: Position2D = $bullet_spawners/UP
+onready var bs_down: Position2D = $bullet_spawners/DOWN
+onready var bs_left: Position2D = $bullet_spawners/LEFT
+onready var bs_right: Position2D = $bullet_spawners/RIGHT
 
 const SPEED: float = 2500.0
 
@@ -66,18 +70,21 @@ func shoot(direction: int, sense: int):
 			if (sense >= 0):
 				bullet.rotate(PI)
 				bullet.speed = Vector2(0, 450)
+				bullet.global_position = bs_down.global_position
 			else:
 				bullet.speed = Vector2(0, -450)
+				bullet.global_position = bs_up.global_position
 		
 		if (direction == 0):
 			if (sense >= 0):
 				bullet.rotate(PI/2)
 				bullet.speed = Vector2(450, 0)
+				bullet.global_position = bs_right.global_position
 			if (sense < 0):
 				bullet.rotate(-PI/2)
 				bullet.speed = Vector2(-450, 0)
+				bullet.global_position = bs_left.global_position
 		
-		bullet.global_position = global_position
 		get_parent().add_child(bullet)
 		can_shoot = false
 		yield(get_tree().create_timer(.5), "timeout")

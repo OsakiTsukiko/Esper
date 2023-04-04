@@ -80,3 +80,17 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, -4 )
 shape = SubResource( 7 )
+
+[node name="bullet_spawners" type="Node2D" parent="."]
+
+[node name="UP" type="Position2D" parent="bullet_spawners"]
+position = Vector2( -0.5, -8 )
+
+[node name="DOWN" type="Position2D" parent="bullet_spawners"]
+position = Vector2( -0.5, 0 )
+
+[node name="LEFT" type="Position2D" parent="bullet_spawners"]
+position = Vector2( -3, -4 )
+
+[node name="RIGHT" type="Position2D" parent="bullet_spawners"]
+position = Vector2( 2, -4 )
